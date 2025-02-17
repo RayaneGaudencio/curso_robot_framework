@@ -21,6 +21,11 @@ Cenário 3: Consulta os dados de um novo usuário
     Consulta os dados do novo usuário
     Confere os dados retornados do usuario
 
+Cenário 4: Logar com o novo usuário criado
+    Cria usuario e cadastra na ServeRest
+    Realiza login com o usuario
+    Confere se o login ocorreu com sucesso
+
 ### Keywords de Auxílio ###
 *** Keywords ***
 

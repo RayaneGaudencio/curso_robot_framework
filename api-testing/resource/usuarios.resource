@@ -52,3 +52,15 @@ Confere os dados retornados do usuario
     Dictionary Should Contain Item    ${DADOS_USUARIO}    administrador    true
     Dictionary Should Contain Item    ${DADOS_USUARIO}    _id              ${ID_USUARIO}
     
+Realiza login com o usuario
+    ${body}    Create Dictionary    
+    ...    email=${EMAIL_TESTE}    
+    ...    password=1234    
+    Criar sessão na ServeRest
+    ${response}    POST On Session    
+    ...    ServeRest    
+    ...    /login    json=${body} 
+    Set Test Variable    ${RESPOSTA}    ${response.json()}
+
+Confere se o login ocorreu com sucesso
+    Dictionary Should Contain Item    ${RESPOSTA}    message    Login realizado com sucesso
